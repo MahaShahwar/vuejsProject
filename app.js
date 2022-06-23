@@ -1,5 +1,7 @@
 const app=Vue.createApp({
-  
+
+
+    //function to give the values initially
     data() {
         return {
             firstName: 'John',
@@ -10,12 +12,12 @@ const app=Vue.createApp({
 
         }
     },
+    //method for button
     methods: {
         async getUser(){
-                const res = await fetch('https://randomuser.me/api')
-                const { results } = await res.json()
+                const randomUsers = await fetch('https://randomuser.me/api')
+                const { results } = await randomUsers.json()
           
-                // console.log(results)
           
                 this.firstName = results[0].name.first
                 this.lastName = results[0].name.last
